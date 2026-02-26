@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Việt Nam - Đất Nước & Con Người</title>
+    <link rel="stylesheet" href="ASM 1,2 Web.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="ASM 1,2 Web.js" defer></script>
+</head>
+<body>
+
+    <button class="menu-toggle" onclick="toggleMenu()">
+        <span>&#9776;</span> 
+    </button>
+
+    <nav class="nav-menu" id="myNav">
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Dịch vụ</a></li>
+            <li><a href="#">Hỗ trợ</a></li>
+            <li><a href="#">Đăng nhập</a></li>
+            <li><a href="#">Đăng ký</a></li>
+        </ul>
+    </nav>
+
+    <nav class="navbar">
+        <div class="nav-center">
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Trang chủ</a></li>
+                <li><a href="#about" class="nav-link">Tổng quan</a></li>
+                <li><a href="#culture" class="nav-link">Văn hóa</a></li>
+                <li><a href="#heritage" class="nav-link">Di sản</a></li>
+                <li><a href="#contact" class="nav-link">Góp ý</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="header" id="home">
+        <div class="banner">
+            <h1>Xin chào Việt Nam</h1>
+            <h2>Vẻ đẹp bất tận</h2><br>
+            <p>
+                <a href="#about" class="btn banner-btn">Tìm hiểu ngay</a>
+            </p>
+        </div>
+    </header>
+
+    <section class="content-divider">
+        <div class="section-center">
+            <article class="skill">
+                <span class="skill-icon"><i class="fas fa-history"></i></span>
+                <h4 class="skill-title">Lịch sử hào hùng</h4>
+                <p class="skill-text">4000 năm văn hiến với những trang sử vẻ vang và nền văn hóa lâu đời đậm đà bản sắc dân tộc.</p>
+            </article>
+            <article class="skill">
+                <span class="skill-icon"><i class="fas fa-map-marked-alt"></i></span>
+                <h4 class="skill-title">Địa lý đa dạng</h4>
+                <p class="skill-text">Trải dài hình chữ S với bờ biển dài, đồi núi hùng vĩ và những đồng bằng trù phú.</p>
+            </article>
+            <article class="skill">
+                <span class="skill-icon"><i class="fas fa-smile-beam"></i></span>
+                <h4 class="skill-title">Con người thân thiện</h4>
+                <p class="skill-text">Người Việt Nam luôn chào đón bạn bè quốc tế với nụ cười nồng hậu và sự hiếu khách.</p>
+            </article>
+            <article class="skill">
+                <span class="skill-icon"><i class="fas fa-utensils"></i></span>
+                <h4 class="skill-title">Ẩm thực đặc sắc</h4>
+                <p class="skill-text">Nền ẩm thực cân bằng âm dương, hương vị hài hòa, nổi tiếng thế giới.</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-center clearfix">
+            <article class="about-img">
+                <div class="about-picture-container">
+                    <img src="https://images.unsplash.com/photo-1557750255-c76072a7aad1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="vietnam landscape" class="about-photo">
+                </div>
+            </article>
+            <article class="about-info">
+                <h1 class="heading-first">Giới thiệu chung</h1>
+                <h3 class="heading-second">Dải đất hình chữ S</h3>
+                <p class="about-text">Việt Nam nằm ở phía đông bán đảo Đông Dương, thuộc khu vực Đông Nam Á. Phía bắc giáp Trung Quốc, phía tây giáp Lào và Campuchia, phía đông và nam giáp Biển Đông.</p>
+                <p class="about-text">Đây là đất nước của những dòng sông, những cánh đồng lúa bát ngát và những nụ cười. Một đất nước đang phát triển mạnh mẽ nhưng vẫn giữ gìn được những giá trị truyền thống.</p><br>
+                <p><a href="#culture" class="btn">Xem văn hóa</a></p>
+            </article>
+        </div>
+    </section>
+
+    <section id="culture" class="dark-section">
+        <div class="section-center clearfix">
+            <article class="product-info product-card">
+                <h2 class="heading-first">Nét đẹp Việt Nam</h2>
+                <h2 class="heading-second heading-second-white">Văn Hóa Việt</h2>
+                <p class="product-text">Việt Nam trên bản đồ thế giới</p>
+                       <img src="unnamed (1).jpg" alt="ao dai" class="product-img"><br>
+                    <p class="caption-text">Những cánh đồng lúa.</p>
+                     <p class="product-text">Cánh đồng lúa chín vàng rực rỡ dưới nắng mai, mang trọn hương vị quê hương và tâm hồn người dân Việt Nam.</p>
+                    <img src="Hanh_trinh_di_san_9.jpg" alt="canh dong lua" class="product-img">
+                      <p class="caption-text">Những cánh đồng bất tận</p>
+                </p>
+            </article>
+       
+            <div class="right-content"> 
+                <article class="product-card">
+                    <img src="ao dai.jpg" alt="ao dai" class="product-img">
+                    <h4 class="product-title">Áo Dài Truyền Thống</h4>
+                    <p class="product-desc">Biểu tượng của vẻ đẹp phụ nữ Việt Nam, kín đáo mà quyến rũ.</p>
+                </article>
+
+                <article class="product-card">
+                    <img src="unnamed.jpg" alt="lotus" class="product-img">
+                    <h4 class="product-title">Hoa Sen - Quốc Hoa</h4>
+                    <p class="product-desc">Tượng trưng cho sự thanh cao, "gần bùn mà chẳng hôi tanh mùi bùn".</p>
+                </article>
+                
+                <article class="product-card">
+                    <img src="licensed-image.jpg" alt="Ha Long Bay" class="product-img">
+                    <h4 class="product-title">Vịnh Hạ Long</h4>
+                    <p class="product-desc">Vịnh Hạ Long – nơi đá gặp mây, biển chạm trời.</p>
+                </article>
+                
+                <article class="product-card">
+                    <img src="am-thuc-viet-nam-2-1751938296.jpg" alt="Food" class="product-img">
+                    <h4 class="product-title">Ẩm Thực Phong Phú</h4>
+                    <p class="product-desc">Mỗi món ăn Việt là một lát cắt của văn hóa.</p>
+                </article>
+            </div> 
+        </div>
+    </section>
+
+    <section id="heritage">
+        <h1 class="heading-second primary-text">Một Số Di Sản Thế Giới</h1>
+        <div style="margin-bottom: 2rem;"><h2>Danh sách các di sản tại Việt Nam được UNESCO công nhận</h2></div>
+        
+        <div class="section-center">
+            <table class="tour-table">
+                <thead>
+                    <tr>
+                        <th>Tên Di Sản</th>
+                        <th>Năm công nhận</th>
+                        <th>Loại hình</th>
+                        <th>Địa điểm</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Quần thể danh thắng Tràng An</td><td>2014</td><td>Hỗn hợp (Văn hóa & Thiên nhiên)</td><td>Ninh Bình</td></tr>
+                    <tr><td>Vịnh Hạ Long</td><td>1994, 2000</td><td>Thiên nhiên</td><td>Quảng Ninh</td></tr>
+                    <tr><td>Phố cổ Hội An</td><td>1999</td><td>Văn hóa</td><td>Quảng Nam</td></tr>
+                    <tr><td>Nhã nhạc cung đình Huế</td><td>2003</td><td>Phi vật thể</td><td>Thừa Thiên Huế</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="video-intro" style="background-color: var(--light-bg);">
+        <div class="section-center" style="display: block;">
+            <h2 class="heading-second primary-text center-text">Khám phá Việt Nam</h2>
+            <p class="center-text" style="margin-bottom: 2rem; font-style: italic;">
+                Hãy cùng chiêm ngưỡng vẻ đẹp hùng vĩ qua những thước phim chân thực nhất
+            </p>
+            
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/YzulGWKiYCQ" 
+                    title="Vietnam: Travel to Love" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="location">
+        <div class="section-center" style="display: block;"> 
+            <h1 class="heading-second primary-text center-text">Vị trí công ty của chúng tôi</h1>
+            <div id="map"></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-center clearfix">
+            <article class="contact-info">
+                <div class="contact-item"></div>
+                <div class="contact-item">
+                    <h3 class="contact-title">Email</h3>
+                    <p class="contact-text">emailcongty@email.com</p>
+                    <p class="contact-text">emailcanhanemail.com</p>
+                </div>
+                <div class="contact-item">
+                    <h3 class="contact-title">Số điện thoại</h3>
+                    <p class="contact-text">+123 456 789</p>
+                    <p class="contact-text">+987 654 321</p>
+                </div>
+                <div class="contact-item">
+                    <h3 class="contact-title">Chú thích</h3>
+                    <p class="contact-text">Mọi thắc mắc xin vui lòng<br>nhắn tin cho chúng tôi</p>
+                </div>
+            </article>
+
+            <article class="contact-form">
+                <h2 class="heading-first">Đăng nhập</h2>
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Tên" class="form-control" required>
+                        <input type="email" placeholder="Địa chỉ Email" class="form-control" required>
+                        <input type="password" placeholder="Mật khẩu" class="form-control" required>
+                        <input type="tel" placeholder="Số điện thoại" class="form-control">
+                    </div>
+                    <button type="submit" class="btn submit-btn">xác nhận</button>
+                </form>
+            </article>
+        </div>
+    </section>
+
+    <div class="social-section" style="text-align: center; margin-top: 2rem; background: #d5d5d5; padding: 20px 0;">
+        <h2 class="heading-second primary-text">Kết nối với chúng tôi</h2>
+        <ul class="wrapper">
+            <li class="icon facebook">
+                <a href="https://www.facebook.com/vietnamtourismboard/" target="_blank">
+                    <span class="tooltip">Facebook</span>
+                    <span><i class="fab fa-facebook-f"></i></span>
+                </a>
+            </li>
+            <li class="icon twitter">
+                <a href="https://twitter.com/vietnamtourism" target="_blank">
+                    <span class="tooltip">Twitter</span>
+                    <span><i class="fab fa-x-twitter"></i></span>
+                </a>
+            </li>
+            <li class="icon instagram">
+                <a href="https://www.instagram.com/vietnamtourismboard/" target="_blank">
+                    <span class="tooltip">Instagram</span>
+                    <span><i class="fab fa-instagram"></i></span>
+                </a>
+            </li>
+            <li class="icon youtube">
+                <a href="https://www.youtube.com" target="_blank">
+                    <span class="tooltip">Youtube</span>
+                    <span><i class="fab fa-youtube"></i></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="chat-widget-btn" onclick="toggleChat()">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <div class="chat-box-container" id="chatBox">
+        <div class="chat-header">
+            <span>Hỗ trợ trực tuyến</span>
+            <i class="fas fa-times" onclick="toggleChat()"></i>
+        </div>
+        
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot">
+                Chào mừng đến với trang web của công ty chúng tôi! Em có thể giúp gì cho anh chị ạ?
+            </div>
+        </div>
+        
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Nhập tin nhắn..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</body>
+</html>

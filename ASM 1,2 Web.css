@@ -1,0 +1,868 @@
+/* Font chữ từ Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=Catamaran:400,700|Grand+Hotel");
+
+/* Định dạng toàn bộ trang web */
+:root {
+    --primary-color: #00897b;    
+    --primary-hover: #00564d;       
+    --text-color: #2c3e50;         
+    --light-bg: #f9fbfb;            
+    --dark-bg: #1a252f;           
+    --white: #ffffff;                   
+    --transition: all 0.3s ease; /* Hiệu ứng */
+}
+
+/* Reset trình duyệt */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html { 
+    font-size: 62.6%; 
+    scroll-behavior: smooth;
+}
+
+/* Định dạng chung cho thân trang */
+body {
+    font-family: "Catamaran", sans-serif; 
+    line-height: 1.5;
+    font-size: 1.6rem; 
+    color: var(--text-color); 
+}
+
+/* Định dạng 4 icon giới thiệu */
+.section-center {
+    width: 90vw; 
+    max-width: 1170px; 
+    margin: 0 auto; /* Căn giữa màn hình */
+    display: flex; 
+    justify-content: space-between; /* Chia đều khoảng cách giữa các phần tử */
+    flex-wrap: wrap; 
+}
+
+section { 
+    padding: 5rem 0; 
+} 
+
+/* THANH ĐIỀU HƯỚNG  */
+.navbar {
+    background: var(--white);
+    padding: 1rem 0;
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    height: 60px;
+    z-index: 999; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+
+/* Căn giữa nội dung bên trong navbar */
+.nav-center { 
+    max-width: 1170px; 
+    margin: 0 auto; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    height: 100%;
+}
+
+/* Danh sách các liên kết */
+.nav-links { 
+    list-style: none; /* Bỏ dấu chấm đầu dòng */
+    display: flex;
+}
+
+.nav-link {
+    text-decoration: none; /* Bỏ gạch chân */
+    color: var(--text-color);
+    font-weight: 700; /* Chữ đậm */
+    text-transform: uppercase; /* Chữ in hoa */
+    letter-spacing: 0.1rem; 
+    margin: 0 1rem; 
+    transition: var(--transition); /* Hiệu ứng đổi màu */
+}
+
+/* Hiệu ứng khi di chuột vào */
+.nav-link:hover { 
+    color: var(--primary-color); 
+}
+
+/* MENU MOBILE */
+/* Icon menu*/
+.menu-toggle {
+    display: block; 
+    position: fixed; 
+    top: 3px; 
+    left: 5px; 
+    z-index: 1001; 
+    background: var(--primary-color); 
+    color: var(--white); 
+    border: none;
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    font-size: 25px; 
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Khung chứa menu sổ xuống trên mobile */
+.nav-menu {
+    display: block; 
+    position: fixed; 
+    top: 60px; 
+    left: 0; 
+    width: 100%;
+    background-color: #333; 
+    z-index: 1000;
+    max-height: 0; /* Mặc định ẩn */
+    overflow: hidden; /* Giấu nội dung thừa */
+    transition: max-height 0.4s ease-out; /* Hiệu ứng trượt xuống */
+}
+
+/* được thêm vào khi bấm nút */
+.nav-menu.active { 
+    max-height: 400px; /* Mở rộng chiều cao để hiện menu */
+    border-bottom: 2px solid var(--primary-color); 
+}
+
+.nav-menu ul { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+/* Link bên trong menu mobile */
+.nav-menu li a {
+    display: flex; 
+    padding: 15px 20px; 
+    color: var(--white);
+    text-decoration: none; 
+    border-bottom: 1px solid #444; /* Đường kẻ ngang phân cách */
+    font-family: "Catamaran", sans-serif; 
+    text-align: center;
+}
+
+.nav-menu li a:hover { 
+    background-color: var(--primary-color); /* Đổi màu nền khi hover */
+}
+
+/* Code định dạng nghệ thuật các kiểu */
+/* Tiêu đề chính */
+.heading-first {
+    font-family: "Grand Hotel", cursive;
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Tiêu đề phụ in hoa */
+.heading-second {
+    font-size: 2.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    margin-bottom: 2rem;
+}
+
+/* Màu trắng cho tiêu đề phụ */
+.heading-second-white { color: var(--white); }
+
+/* Class tiện ích để tô màu chữ chủ đạo */
+.primary-text { color: var(--primary-color); }
+
+/* Class tiện ích để căn giữa chữ */
+.center-text { text-align: center; }
+
+/* NÚT BẤM */
+/* Style chung cho các nút */
+.btn {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    font-family: "Catamaran", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;/* Viết hoa */
+    letter-spacing: 0.2rem;
+    text-decoration: none; /* Bỏ gạch chân */
+    border-radius: 0.6rem; /* Bo tròn góc */
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: var(--transition);
+    background: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hiệu ứng hover */
+.btn:hover {
+    background: var(--primary-hover);
+    color: var(--white);
+    transform: translateY(-2px); /* Nút nảy lên nhẹ */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style riêng cho nút to ở trang chủ */
+.banner-btn {
+    background: linear-gradient(45deg, var(--primary-color), #00bfa5); /* Màu chuyển sắc */
+    color: var(--white);
+    border: none;
+    padding: 1.2rem 3.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 137, 123, 0.4); 
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng hover nút banner */
+.banner-btn:hover {
+    background: linear-gradient(45deg, #00bfa5, var(--primary-color)); /* Đảo chiều màu */
+    box-shadow: 0 6px 20px rgba(0, 137, 123, 0.6);
+    transform: scale(1.05); /* Phóng to nhẹ */
+}
+
+.banner-btn {
+    position: relative; /* Để dải sáng có thể nằm đè lên nút */
+    overflow: hidden;   /* Để dải sáng không bị tràn ra ngoài viền nút */
+}
+
+.banner-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%; /* Đẩy dải sáng ra khỏi tầm mắt bên trái */
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg); /* Làm dải sáng nghiêng đi */
+    transition: all 0.7s ease; 
+}
+
+.banner-btn:hover::before {
+    left: 150%; /* Quét từ trái sang phải */
+}
+
+/* TRANG CHỦ */
+.header {
+    min-height: 100vh; 
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('tuyen-diem-du-lich-viet-nam-4.jpg') center/cover fixed;
+    display: flex;
+    justify-content: center; /* Căn giữa ngang */
+    align-items: center; /* Căn giữa dọc */
+    text-align: center;
+    padding-top: 6rem;
+}
+
+.banner h1 {
+    font-size: 5rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.banner h2 {
+    font-family: "Grand Hotel", cursive;
+    font-size: 4rem;
+    color: var(--primary-color);
+    letter-spacing: 0.2rem;
+}
+
+/* 4 ICON GIỚI THIỆU */
+/* Phần nền xám chứa */
+.content-divider { 
+    background: #e5e5e5; 
+    padding: 4rem 0; 
+}
+
+.skill { 
+    width: 23%; 
+    text-align: center; 
+}
+
+.skill-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 1rem;
+    transition: transform 0.5s; /* Hiệu ứng xoay */
+}
+
+/* Khi di chuột vào cột, icon sẽ xoay 180 độ */
+.skill:hover .skill-icon { 
+    transform: rotateY(180deg); 
+}
+
+.skill-title { 
+    text-transform: uppercase; 
+    color: var(--primary-color); 
+    margin-bottom: 1rem; 
+    font-size: 1.6rem; 
+}
+
+.skill-text { 
+    max-width: 80%; 
+    margin: 0 auto; 
+}
+
+/* GIỚI THIỆU CHUNG */
+/* Chia đôi màn hình: 48% ảnh, 48% chữ */
+.about-img, .about-info { 
+    width: 48%; 
+}
+
+/* Ảnh giới thiệu */
+.about-photo { 
+    width: 100%; 
+    display: block; 
+    border-radius: 0.5rem; 
+    transition: transform 0.5s ease; 
+}
+
+/* Khung chứa ảnh để xử lý hiệu ứng zoom */
+.about-picture-container { 
+    overflow: hidden; /* Cắt phần ảnh bị thừa ra khi zoom */
+    border-radius: 0.5rem; 
+}
+
+/* Zoom ảnh khi di chuột */
+.about-picture-container:hover .about-photo { 
+    transform: scale(1.1); 
+}
+
+/* CODE PHẦN VĂN HÓA */
+.dark-section { 
+    background: var(--dark-bg); 
+    padding: 5rem 0; 
+}
+
+/* Văn hóa */
+/* Định dạng cách sắp xếp trong phần văn hóa */
+.product-card { 
+    width: 32%;
+    text-align: center; 
+    margin-bottom: 2rem;
+    background-color: #243442; /* Nền thẻ */
+    padding: 15px;              
+    border-radius: 10px; /* Bo tròn góc thẻ */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
+    border: 1px solid rgba(255,255,255,0.05); 
+    transition: all 0.4s ease;  
+    position: relative;         
+    overflow: hidden;         
+      font-size: 1.6rem; 
+}
+
+/* Layout phần bên phải chứa các thẻ nhỏ hơn */
+.right-content { 
+    width: 65%; 
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+}
+
+/* Các thẻ con trong phần right-content chiếm 48% */
+.right-content .product-card { width: 48%; }
+
+/* Hiệu ứng hover vào thẻ card */
+.product-card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    background-color: #2c3e50; 
+}
+
+/* Tạo đường kẻ màu xanh chạy dưới chân thẻ khi hover */
+.product-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--primary-color); 
+    transform: scaleX(0); /* Mặc định ẩn */
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover::after {
+    transform: scaleX(1); /* Hiện ra khi hover */
+}
+
+.product-info { text-align: left; }
+.product-text { color: var(--white); margin-bottom: 2rem; }
+
+/* Ảnh trong phần Văn Hóa */
+.product-img {
+    width: 100%; 
+    height: 220px; 
+    object-fit: cover; /* Cắt ảnh vừa khung */
+    border-radius: 5px; 
+    margin-bottom: 1.5rem; 
+    transition: transform 0.5s ease; 
+}
+
+/* Zoom nhẹ ảnh khi hover */
+.product-card:hover .product-img {
+    transform: scale(1.05); 
+    opacity: 1; 
+}
+
+.product-title { 
+    color: var(--primary-color); 
+    text-transform: uppercase; 
+    font-size: 1.8rem; 
+    margin-bottom: 0.5rem; 
+    font-weight: bold;
+}
+
+.product-desc { 
+    color: #e0e0e0; 
+    padding: 0 1rem; 
+    font-size: 1.7rem;
+    line-height: 1.6;
+}
+
+/* PHẦN BẢNG DI SẢN */
+#heritage { background: var(--white); text-align: center; }
+
+.tour-table {
+    width: 100%; 
+    border-collapse: collapse; /* Gộp đường viền ô */
+    margin-top: 2rem;
+    font-size: 1.6rem; 
+    background: var(--white); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Style cho ô tiêu đề (th) và ô dữ liệu (td) */
+.tour-table th, .tour-table td { 
+    border: 1px solid #ddd; 
+    padding: 15px; 
+    text-align: left; 
+}
+
+/* Style riêng cho hàng tiêu đề bảng */
+.tour-table th { 
+    background-color: var(--primary-color); 
+    color: var(--white); 
+    text-transform: uppercase; 
+}
+
+/* Tô màu xen kẽ các hàng */
+.tour-table tr:nth-child(even) { 
+    background-color: #f2f2f2; 
+}
+
+/* Đổi màu khi di chuột vào hàng */
+.tour-table tr:hover { 
+    background-color: #c2cfca; 
+}
+
+/* BẢN ĐỒ */
+#location { background: var(--white); }
+
+#map {
+    height: 400px; 
+    width: 100%;
+    border: 3px solid var(--primary-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 1; 
+}
+
+/* LIÊN HỆ & FORM */
+#contact { background: var(--light-bg); }
+
+/* Chia đôi cột: Thông tin và Form */
+.contact-info, .contact-form { width: 48%; }
+
+.contact-item { margin-bottom: 2rem; }
+.contact-title { 
+    color: var(--primary-color); 
+    font-family: "Grand Hotel", cursive; 
+    font-size: 2.5rem; 
+    margin-bottom: 0.5rem; 
+}
+.contact-text { text-transform: uppercase; letter-spacing: 0.1rem; }
+
+/* Style cho khung Form đăng nhập */
+.contact-form { 
+    background: rgb(218, 241, 230); 
+    padding: 2rem; 
+    border-radius: 0.5rem; 
+    text-align: center; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+}
+
+/* Các ô nhập thông tin */
+.form-control { 
+    width: 100%; 
+    background: var(--light-bg); 
+    border: none; 
+    padding: 1rem; 
+    margin-bottom: 1rem; 
+}
+
+/* Nút Submit trong form */
+.submit-btn { 
+    width: 100%; 
+    background: var(--primary-color); 
+    color: var(--white); 
+    border: none; 
+    padding: 1rem; 
+    cursor: pointer; 
+    text-transform: uppercase; 
+    font-weight: bold; 
+     margin-top: 2rem; 
+}
+
+.submit-btn:hover { background: var(--primary-hover); }
+
+/* CHATBOX */
+/* Nút tròn nổi ở góc dưới màn hình */
+.chat-widget-btn {
+    position: fixed;
+    bottom: 20px; right: 20px;
+    width: 60px; height: 60px;
+    background: var(--primary-color); 
+    color: var(--white);
+    border-radius: 50%; /* Làm tròn */
+    display: flex; justify-content: center; align-items: center;
+    font-size: 2.4rem; 
+    cursor: pointer; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000; 
+    transition: var(--transition);
+}
+
+.chat-widget-btn:hover { 
+    background: var(--primary-hover); 
+    transform: scale(1.1); /* Phóng to khi hover */
+}
+
+/* Khung cửa sổ chat */
+.chat-box-container {
+    position: fixed; bottom: 90px; right: 20px;
+    width: 320px; 
+    background: var(--white); 
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2); 
+    z-index: 1001;
+    overflow: hidden; 
+    display: none; /* JS sẽ đổi cái này thành flex */
+    flex-direction: column;
+}
+
+/* Tiêu đề cửa sổ chat */
+.chat-header {
+    background: var(--primary-color); 
+    color: var(--white);
+    padding: 1.5rem; 
+    display: flex; justify-content: space-between;
+    align-items: center; 
+    font-size: 1.6rem; font-weight: 700;
+}
+
+/* Phần nội dung tin nhắn */
+.chat-body { 
+    height: 300px; 
+    overflow-y: auto; /* Cho phép cuộn */
+    padding: 1.5rem; 
+    background: #f9f9f9; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1rem; /* Khoảng cách giữa các tin nhắn */
+}
+
+/* Bong bóng tin nhắn chung */
+.chat-message { 
+    padding: 1rem; 
+    border-radius: 20px; 
+    max-width: 80%; 
+    font-size: 1.4rem; 
+    word-wrap: break-word; 
+}
+
+/* Tin nhắn của AI */
+.chat-message.bot { 
+    background: #e5e5e5; 
+    color: var(--text-color); 
+    align-self: flex-start; 
+    border-bottom-left-radius: 5px; 
+}
+
+/* Tin nhắn của khách hàng */
+.chat-message.user { 
+    background: var(--primary-color); 
+    color: var(--white); 
+    align-self: flex-end; 
+    border-bottom-right-radius: 5px; 
+}
+
+/* Khu vực nhập tin nhắn */
+.chat-input { 
+    display: flex; 
+    border-top: 1px solid #ddd; 
+    padding: 1rem; 
+    background: var(--white); 
+}
+
+.chat-input input { 
+    flex: 1; /* Chiếm hết chỗ trống */
+    border: none; 
+    outline: none; 
+    padding: 0.5rem; 
+    font-size: 1.4rem; 
+}
+
+.chat-input button { 
+    background: none; 
+    border: none; 
+    color: var(--primary-color); 
+    font-size: 1.8rem; 
+    cursor: pointer; 
+    margin-left: 1rem; 
+}
+
+/* GIAO DIỆN MOBILE */
+/* Màn hình dưới 992px (Tablet lớn) */
+@media screen and (max-width: 992px) {
+    /* Các cột skill và thẻ sản phẩm đổi từ 4 cột -> 2 cột */
+    .skill, .product-card { 
+        width: 48%; 
+        margin-bottom: 2rem; 
+    }
+}
+
+/* Màn hình dưới 768px (Điện thoại) */
+@media screen and (max-width: 768px) {
+    /* Cho hiện menu ngang dạng danh sách trên mobile */
+    .navbar .nav-links {
+        display: flex;       
+        flex-wrap: wrap;    
+        justify-content: center;
+        font-size: 1.2rem;   
+        padding: 0;
+    }
+
+.header {
+    /* Chiều ngang và chiều dọc đều là 100% khung */
+    background-size: 100% 100% !important; 
+    
+    /* Giữ chiều cao vừa phải */
+    min-height: 40vh !important; 
+    
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                      url('tuyen-diem-du-lich-viet-nam-4.jpg') !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+}
+   
+    .nav-link {
+        margin: 0 0.5rem;    
+    }
+
+    /* Điều chỉnh vị trí nút icon menu */
+    .menu-toggle { top: 30px; transform: translateY(-50%); left: 4px; } 
+    
+    /* Tăng khoảng cách trên cùng header */
+    .header { padding-top: 8rem; }
+    
+    /* Chuyển các layout 2 cột thành 1 cột */
+    .about-img, .about-info, .contact-info, .contact-form, .product-card, .skill { 
+        width: 100%; 
+        margin-bottom: 2rem; 
+    }
+
+    /* Cỡ chữ tiêu đề */
+.banner h1 {
+    font-size: 2.2rem !important; 
+    margin-bottom: 1.5rem !important;
+}
+
+   .banner h2 {
+    font-size: 1.8rem !important;
+}
+
+.banner-btn {
+    padding: 0.8rem 2rem !important; 
+    font-size: 1.4rem !important;
+}
+
+    /* Content bên phải cũng full màn hình */
+    .right-content, .right-content .product-card { width: 100%; }
+}
+
+/* Animation cho Chatbox khi mở ra */
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Container để video Youtube responsive */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Tỷ lệ khung hình 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 0.5rem; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+/* Iframe video sẽ bung đầy container */
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Style cho Footer */
+.footer {
+    background: #222; 
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.footer-icons {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; 
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: var(--white, #fff); 
+    transition: var(--transition, all 0.3s linear);
+}
+
+.social-icon:hover {
+    color: var(--primary-color, #4abf90); 
+    transform: translateY(-3px); 
+}
+
+.copyright {
+    color: var(--white, #fff);
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+}
+
+/* ICON MẠNG XÃ HỘI */
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+}
+
+/* Nút icon tròn trắng */
+.wrapper .icon {
+    position: relative;
+    background: #ffffff;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Tooltip chữ hiện lên khi hover */
+.wrapper .icon .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Mặc định ẩn */
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Khi hover vào icon, tooltip bay lên và hiện ra */
+.wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Mũi tên tam giác nhỏ dưới tooltip */
+.wrapper .icon .tooltip:before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: inherit; /* Kế thừa màu nền của tooltip */
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg); /* Xoay vuông thành tam giác */
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Màu sắc riêng cho từng mạng xã hội khi Hover --- */
+
+/* Facebook (Xanh dương) */
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip:before {
+    background: #1877F2;
+    color: #ffffff;
+}
+
+/* Twitter / X (Đen) */
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip:before {
+    background: #000000;
+    color: #ffffff;
+}
+
+/* Instagram (Hồng) */
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip:before {
+    background: #E4405F;
+    color: #ffffff;
+}
+
+/* Youtube (Đỏ) */
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip:before {
+    background: #CD201F;
+    color: #ffffff;
+}
+
+/* Link bao phủ toàn bộ icon */
+.wrapper .icon a {
+    text-decoration: none;      
+    color: inherit;             
+    display: flex;       
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
